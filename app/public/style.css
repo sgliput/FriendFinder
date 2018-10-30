@@ -1,0 +1,15 @@
+input.radio{
+    margin: 0 0 0 30px;
+}
+
+.left{
+    background-color: aqua;
+}
+
+.right{
+    background-color: lightcoral;
+}
+
+.fixed{
+    position: fixed;
+}
