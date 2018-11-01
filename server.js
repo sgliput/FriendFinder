@@ -9,9 +9,8 @@ app.use(express.json());
 app.use(express.static('app'));
 
 
-
-
-
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
 //Start the server
 app.listen(port, function () {

@@ -1,15 +1,25 @@
+body{
+    background-color: brown;
+}
+
 input.radio{
     margin: 0 0 0 30px;
 }
 
 .left{
-    background-color: aqua;
+    background-color: lightgreen;
 }
 
 .right{
-    background-color: lightcoral;
+    background-color: green;
+    color: white;
 }
 
 .fixed{
     position: fixed;
+    margin-top: 10%;
+}
+
+.example{
+    margin-bottom: 15px;
 }

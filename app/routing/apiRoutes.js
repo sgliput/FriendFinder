@@ -1,18 +1,53 @@
-var express = require("express");
-var path = require("path");
+var friends = require("../data/friends.js");
 
-var app = express();
-var port = process.env.PORT || 3000;
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+module.exports = function (app) {
 
-app.get('/api/friends', function (request, response) {
-    response.sendFile(path.join(__dirname, "survey.html"));
-});
 
-app.post("/api/friends", function (request, response) {
+    app.get('/api/friends', function (request, response) {
+        response.json(friends);
+    });
+
+    app.post("/api/friends", function (request, response) {
         var newFriend = request.body;
-        friends.push(newFriend);
-        response.json(newFriend);
-});
+        var totalDifference = 0;
+        var scores = [];
+        for (var i = 0; i < friends.length; i++) {
+            for (var j = 0; j < newFriend.answerArray.length; j++) {
+                var num1 = parseInt(newFriend.answerArray[j]);
+                var num2 = parseInt(friends[i].answerArray[j]);
+                
+                    totalDifference += Math.abs(num1 - num2);
+                console.log(totalDifference);
+                
+            }
+            scores.push(totalDifference);
+            friends[i].difference = totalDifference;
+            totalDifference = 0;
+        };
+
+       
+               var matchScore = Math.min(...scores);
+               var badMatchScore = Math.max(...scores);
+               for(var k = 0; k < friends.length; k++){
+                   if(friends[k].difference === matchScore){
+                    var match = friends[k];
+                   }
+                   if(friends[k].difference === badMatchScore){
+                    var badMatch = friends[k];
+                   }
+               }
+                    
+        
+        console.log(match);
+        console.log(badMatch);
+        var matches = {
+            bestMatch: match,
+            worstMatch: badMatch
+        };
+
+
+        response.json(matches);
+    });
+
+};
