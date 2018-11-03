@@ -8,6 +8,10 @@ module.exports = function (app) {
         response.json(friends);
     });
 
+    app.get('/api/friendList', function (request, response) {
+        response.json(friends);
+    });
+
     app.post("/api/friends", function (request, response) {
         var newFriend = request.body;
         var totalDifference = 0;
@@ -26,15 +30,18 @@ module.exports = function (app) {
             totalDifference = 0;
         };
 
-       
+
                var matchScore = Math.min(...scores);
                var badMatchScore = Math.max(...scores);
+
+               var match = [];
+               var badMatch = [];
                for(var k = 0; k < friends.length; k++){
                    if(friends[k].difference === matchScore){
-                    var match = friends[k];
+                    match.push(friends[k]);
                    }
                    if(friends[k].difference === badMatchScore){
-                    var badMatch = friends[k];
+                    badMatch.push(friends[k]);
                    }
                }
                     
@@ -51,3 +58,17 @@ module.exports = function (app) {
     });
 
 };
+
+
+// var matchScore = Math.min(...scores);
+//                var badMatchScore = Math.max(...scores);
+
+               
+//                for(var k = 0; k < friends.length; k++){
+//                    if(friends[k].difference === matchScore){
+//                     var match = friends[k];
+//                    }
+//                    if(friends[k].difference === badMatchScore){
+//                     var badMatch = friends[k];
+//                    }
+//                }

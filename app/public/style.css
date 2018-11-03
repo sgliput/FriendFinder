@@ -1,5 +1,14 @@
 body{
     background-color: brown;
+    text-align: center;
+}
+
+#rules{
+    padding: 0 40px;
+}
+
+label{
+    font-weight: bold;
 }
 
 input.radio{
@@ -15,11 +24,32 @@ input.radio{
     color: white;
 }
 
-.fixed{
-    position: fixed;
-    margin-top: 10%;
+@media screen and (max-width: 1200px) {
+    .right{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.fixed, h1{
+    margin: 10% auto;
+}
+
+@media screen and (min-width: 992px) {
+    .fixed{
+        position: fixed;
+    }
 }
 
 .example{
     margin-bottom: 15px;
 }
+
+.photo{
+    margin: 0 auto;
+}
+
+.changeBack{
+    cursor: pointer;
+}
+
