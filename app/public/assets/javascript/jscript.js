@@ -2,7 +2,7 @@
  $(".submit").on("click", function (event) {
     event.preventDefault();
     //If all 10 questions have been answered
-    if ($("input:checked").length == 10 && $("#nameInput").val() !== "" && $("#imageLink").val() !== "") {
+    if ($("input[name!=example]:checked").length == 10 && $("#nameInput").val() !== "" && $("#imageLink").val() !== "") {
         //Pushes all the values of the checked radio buttons to an array
         var answers = [];
         for (var i = 1; i < 11; i++) {
