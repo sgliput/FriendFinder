@@ -45,7 +45,7 @@ var friendsArray = [
     },
     {
         nameValue: "Alex S.",
-        imageURL: "https://www.celebsmoviejackets.com/image/cache/catalog/Star%20Wars%20The%20Last%20Jedi/star-wars-poe-dameron-vest-800x800.jpg",
+        imageURL: "https://i.pinimg.com/736x/8f/cb/37/8fcb37ed8e17a85f778cdcf4bf627b13.jpg",
         answerArray: [4, 1, 2, 5, 4, 5, 1, 3, 1, 5]
     },
     {
