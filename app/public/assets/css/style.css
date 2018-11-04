@@ -1,10 +1,23 @@
 body{
-    background-color: brown;
+    background-color: green;
     text-align: center;
+}
+
+.jumbotron{
+    background-color: lightgreen;
+}
+
+.start{
+    margin: 2%;
+}
+
+.container{
+    margin: 2% auto 2% auto;
 }
 
 #rules{
     padding: 0 40px;
+    font-size: 1.3rem;
 }
 
 label{
@@ -20,7 +33,7 @@ input.radio{
 }
 
 .right{
-    background-color: green;
+    background-color: darkgreen;
     color: white;
 }
 
@@ -31,8 +44,8 @@ input.radio{
     }
 }
 
-.fixed, h1{
-    margin: 10% auto;
+.fixed, .left h1, .right h1{
+    margin: 10% auto 0 auto;
 }
 
 @media screen and (min-width: 992px) {

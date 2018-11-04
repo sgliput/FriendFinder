@@ -1,23 +1,21 @@
 
 var path = require("path");
-var fs = require("fs");
 
 
-module.exports = function(app){
+module.exports = function (app) {
 
-//Home page
-app.get('/', function (request, response) {
-    response.sendFile(path.join(__dirname, "../public/home.html"));
-});
 
-//Survey page
-app.get('/survey', function (request, response) {
-    response.sendFile(path.join(__dirname, "../public/survey.html"));
-    
-});
 
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-  });
+    //Connects to survey page
+    app.get('/survey', function (request, response) {
+        response.sendFile(path.join(__dirname, "../public/survey.html"));
+
+    });
+
+    //Connects to home page if anything but "survey" follows the base URL
+    app.get("*", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
 
 };
+
